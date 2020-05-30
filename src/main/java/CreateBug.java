@@ -5,7 +5,7 @@ import org.apache.http.client.HttpClient;
 public class CreateBug {
 
 	public static void main(String[] args) {
-		String _personalAccessToken = "oj4yxcuj2znmdv4ky754ciiipu5bv6arvqvh3kklatvpvvekvcjq";
+		String _personalAccessToken = "PATH";
 //		   string _credentials = Convert.ToBase64String(System.Text.ASCIIEncoding.ASCII.GetBytes(string.Format("{0}:{1}", "", _personalAccessToken)));
 		byte[] encodedBytes = Base64.getEncoder().encode(_personalAccessToken.getBytes());
 		String _credentials = new String(encodedBytes);
