@@ -181,38 +181,6 @@ public class ResApiMain {
 		try {
 			URL url = new URL(ServiceUrl + TeamProjectName + UrlEndGetWorkItemById + id.toString() + ApiVersion);
 			HttpURLConnection con = ResApiMain.apiConnection(PAT, url);
-//			String jsonInputString = "[{\"op\":\"add\",\"path\":\"/fields/System.Title\",\"value\":\"" + "tpain"
-//					+ "\"}]";
-//			String jsonInputString = "[{\"op\":\"add\",\"path\":\"/fields/System.State\",\"value\":\"" + "New"
-//					+ "\"}]";
-//			String jsonInputString = "[{\r\n" + 
-//					"	\"op\": \"add\",\r\n" + 
-//					"	\"path\": \"/fields/System.AssignedTo\",\r\n" + 
-//					"	\"value\": {\r\n" + 
-//					"		\"displayName\": \"Marco Antonio Parra Cortes\",\r\n" + 
-//					"		\"url\": \"https://spsprodcus2.vssps.visualstudio.com/Ab0d6abc0-6ede-4cc1-8b4d-9ebbf38108c8/_apis/Identities/52049546-6bd8-6b4a-ab3d-24d45a4de948\",\r\n" + 
-//					"		\"_links\": {\r\n" + 
-//					"			\"avatar\": {\r\n" + 
-//					"				\"href\": \"https://dev.azure.com/marcoparra0034/_apis/GraphProfile/MemberAvatars/aad.NTIwNDk1NDYtNmJkOC03YjRhLWFiM2QtMjRkNDVhNGRlOTQ4\"\r\n" + 
-//					"			}\r\n" + 
-//					"		},\r\n" + 
-//					"		\"id\": \"52049546-6bd8-6b4a-ab3d-24d45a4de948\",\r\n" + 
-//					"		\"uniqueName\": \"marco.parra@softtek.com\",\r\n" + 
-//					"		\"imageUrl\": \"https://dev.azure.com/marcoparra0034/_apis/GraphProfile/MemberAvatars/aad.NTIwNDk1NDYtNmJkOC03YjRhLWFiM2QtMjRkNDVhNGRlOTQ4\",\r\n" + 
-//					"		\"descriptor\": \"aad.NTIwNDk1NDYtNmJkOC03YjRhLWFiM2QtMjRkNDVhNGRlOTQ4\"\r\n" + 
-//					"	}\r\n" + 
-//					"}]";
-//			String jsonInputString = "[  \r\n" + 
-//					"  {\r\n" + 
-//					"    \"op\": \"add\",\r\n" + 
-//					"    \"path\": \"/fields/System.History\",\r\n" + 
-//					"    \"value\": \"Comment from VSO REST API\"\r\n" + 
-//					"  }\r\n" + 
-//					"]";
-
-//			String jsonInputString = "[{\"op\":\"add\",\"path\":\"/fields/Microsoft.VSTS.Common.Priority\",\"value\":\"3\"}]";
-//			String jsonInputString = "[{\"op\":\"add\",\"path\":\"/fields/Microsoft.VSTS.TCM.SystemInfo\",\"value\":\"Linux 64 bit Ubuntu - Chrome Browser\"}]";
-			String jsonInputString = "[{\"op\":\"add\",\"path\":\"/fields/Microsoft.VSTS.TCM.ReproSteps\",\"value\":\"When you get arrive to this file and then go to sign in page when - Chrome Browser\"}]";
 			try (OutputStream os = con.getOutputStream()) {
 				byte[] input = jsonInputString.getBytes("utf-8");
 				System.out.println("Se ha actualizado con exito el");
@@ -255,15 +223,11 @@ public class ResApiMain {
 		try {
 //			InputStreamReader 
 //			FileInputStream 
-			// https://dev.azure.com/eliotparedes/_apis/wit/attachments?fileName=C:\TEMP\Test.jpg&api-version=5.1
 			URL url = new URL(
-//					"https://dev.azure.com/marcoparra0034/_apis/wit/attachments?fileName=new.png&api-version=5.1");
-		"https://dev.azure.com/marcoparra0034/_apis/wit/attachments?fileName=edgeEvidence.mp4&api-version=5.1");
 			HttpURLConnection con = ResApiMain.apiConnectionAttachments(PAT, url);
 			con.setRequestMethod("POST");
 //			String jsonInputString = "User text content to upload";
-//			try (BufferedInputStream is = new BufferedInputStream(new FileInputStream("C:\\Users\\marco.parra\\Pictures\\Screenshots\\as.jpg"))) {
-				try (BufferedInputStream is = new BufferedInputStream(new FileInputStream("C:\\Users\\marco.parra\\Pictures\\Screenshots\\Edge.Web.TC_TC_CTP FIVE_GUYS_1_SEARCH NEAR RESTAURANT_1_SEARCH NEAR RESTAURANT._2020.05.07_10_02_27.mp4"))) {
+				try (BufferedInputStream is = new BufferedInputStream(new FileInputStream("PATH MEDIA"))) {
 				byte[] input = IOUtils.toByteArray(is);
 				OutputStream os = con.getOutputStream();
 				os.write(input, 0, input.length);
