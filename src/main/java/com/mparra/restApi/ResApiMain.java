@@ -28,13 +28,13 @@ import org.json.simple.parser.ParseException;
  */
 public class ResApiMain {
 
-	static String ServiceUrl = "https://dev.azure.com/marcoparra0034/";
-	static String TeamProjectName = "AgileFr";
+	static String ServiceUrl = "https://dev.azure.com/{organization}/";
+	static String TeamProjectName = "{ProjectName}";
 	static String UrlEndGetWorkItemById = "/_apis/wit/workitems/";
 	static String UrlEndAttachments = "/_apis/wit/attachments";
 	static String ApiVersion = "?api-version=5.1";
 	static Integer WorkItemId = 3;
-	static String PAT = "oj4yxcuj2znmdv4ky754ciiipu5bv6arvqvh3kklatvpvvekvcjq";
+	static String PAT = "";
 
 	// Return HttpURLConnection from AzureDevops
 	public static HttpURLConnection apiConnection(String PAT, URL url) {
